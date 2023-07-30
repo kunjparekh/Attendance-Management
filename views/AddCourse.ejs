@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Add Course</title>
+  </head>
+  <body>
+    <h1>Add Course</h1>
+
+    <ul>
+      <% if (typeof errors != 'undefined') { %> <% errors.forEach(error => { %>
+      <li><%= error.message %></li>
+      <% }) %> <% } %>
+    </ul>
+    <form action="/users/AddCourse" method="POST">
+      <div>
+        <input
+          type="text"
+          id="CourseName"
+          name="CourseName"
+          placeholder="Course Name"
+          required
+        />
+      </div>
+      <div>
+        <input
+          type="text"
+          id="CourseID"
+          name="CourseID"
+          placeholder="Course ID"
+          required
+        />
+      </div>
+      <div>
+        <select id="faculty1" name="faculty1" required>
+          <option value="" disabled selected>Select Faculty 1</option>
+        </select>
+      </div>
+      <div>
+        <select id="faculty2" name="faculty2">
+          <option value="" disabled selected>Select Faculty 2</option>
+        </select>
+      </div>
+      <div>
+        <input type="submit" value="ADD" />
+      </div>
+    </form>
+
+    <script>
+      // Fetch faculty data for Faculty1
+      fetch('/dropdown-data')
+        .then(response => response.json())
+        .then(data => {
+          const faculty1Dropdown = document.getElementById('faculty1');
+
+          // Populate the dropdown for Faculty1
+          data.forEach(item => {
+            const option = document.createElement('option');
+            option.value = item.name; // Assuming your faculty table has an "id" column
+            option.textContent = item.name; // Assuming your faculty table has a "name" column
+            faculty1Dropdown.appendChild(option);
+          });
+        })
+        .catch(error => {
+          console.error('Error fetching faculty1 data', error);
+        });
+
+      // Fetch faculty data for Faculty2
+      fetch('/dropdown-data')
+        .then(response => response.json())
+        .then(data => {
+          const faculty2Dropdown = document.getElementById('faculty2');
+
+          // Populate the dropdown for Faculty2
+          data.forEach(item => {
+            const option = document.createElement('option');
+            option.value = item.name; // Assuming your faculty table has an "id" column
+            option.textContent = item.name; // Assuming your faculty table has a "name" column
+            faculty2Dropdown.appendChild(option);
+          });
+        })
+        .catch(error => {
+          console.error('Error fetching faculty2 data', error);
+        });
+    </script>
+  </body>
+</html>

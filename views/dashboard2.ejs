@@ -1,0 +1,49 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Faculty Dashboard</title>
+  </head>
+  <body>
+    <h1>Faculty Dashboard</h1>
+
+    <% if (typeof message !== 'undefined' ) { %>
+    <p><%= message %></p>
+    <% } %>
+
+  </body>
+</html> -->
+
+<!-- dashbird2.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Dashboard</title>
+</head>
+<body>
+  <h1>Welcome <%= user %>!</h1>
+
+  <% if (typeof message !== 'undefined' ) { %>
+  <p><%= message %></p>
+  <% } %>
+
+  <a href="/users/query1">Get the attendance data for specific day and course</a>
+  <br>
+  <a href="/users/query2">Count of specific students' attendance in that course</a>
+
+  </script>
+</body>
+</html>

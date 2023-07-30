@@ -1,0 +1,54 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Home</title>
+  </head>
+  <body>
+    <h1>Home</h1>
+
+    <% if (typeof message !== 'undefined' ) { %>
+    <p><%= message %></p>
+    <% } %>
+
+    <a href="/users/register">Add Faculty</a>
+    <br>
+    <a href="/users/AddCourse">Add Course</a>
+  </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Home</title>
+  </head>
+  <body>
+    <h1>Home</h1>
+
+    <% if (typeof message !== 'undefined' ) { %>
+    <p><%= message %></p>
+    <% } %>
+
+    <a href="/users/register">Add Faculty</a>
+    <br>
+    <a href="/users/AddCourse">Add Course</a>
+    <form method="post" action="/upload" enctype="multipart/form-data">
+      <h2>Upload File</h2>
+      <input type="file" name="uploadFile" id="uploadFile" required>
+      <button type="submit">Upload</button>
+    </form>
+  
+  </body>
+</html>
